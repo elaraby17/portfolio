@@ -23,7 +23,38 @@
     <li><a href="#projects">projects</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
+  <!-- Hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-nav-item">
+    <a href="#about" class="mobile-link">
+      <span class="nav-num">01</span>About
+    </a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="#skills" class="mobile-link">
+      <span class="nav-num">02</span>Skills
+    </a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="#projects" class="mobile-link">
+      <span class="nav-num">03</span>Projects
+    </a>
+  </div>
+  <div class="mobile-nav-item">
+    <a href="#contact" class="mobile-link">
+      <span class="nav-num">04</span>Contact
+    </a>
+  </div>
+
+  <div class="mobile-menu-footer">&lt;<span>elaraby</span> /&gt; · Full Stack Developer</div>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -200,19 +231,19 @@
       <div class="contact-items">
         <div class="contact-item">
           <div class="contact-icon">✉</div>
-          <span>elaraby@email.com</span>
+          <a href="mailto:elaraby98123@email.com" target="_blank">elaraby98123@email.com</a>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
-          <span>Egypt</span>
+          <span>Suez, Egypt</span>
         </div>
         <div class="contact-item">
           <div class="contact-icon">in</div>
-          <span>linkedin.com/in/elaraby</span>
+          <a href="https://www.linkedin.com/in/mohamed-el-araby-a1a098301/" target="_blank">linkedin.com/in/elaraby</a>
         </div>
         <div class="contact-item">
           <div class="contact-icon">⌥</div>
-          <span>github.com/elaraby</span>
+          <a href="https://github.com/elaraby17" target="_blank">github.com/elaraby</a>
         </div>
       </div>
     </div>
@@ -242,44 +273,9 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>Designed & built by <span>Ahmed Elaraby</span> · Full Stack Developer · <span>React & Laravel</span></p>
+  <p>Designed & built by <a href="https://github.com/elaraby">Mohamed Elaraby</a> · Full Stack Developer · <span>React & Laravel</span></p>
 </footer>
 
-<script>
-  const texts = ['Full Stack Developer', 'React Developer', 'Laravel Developer', 'Problem Solver'];
-  let i = 0, charIdx = 0, deleting = false;
-  const el = document.getElementById('typed-text');
-
-  function type() {
-    const current = texts[i];
-    if (!deleting) {
-      el.textContent = current.slice(0, charIdx++);
-      if (charIdx > current.length) {
-        deleting = true;
-        setTimeout(type, 1800);
-        return;
-      }
-    } else {
-      el.textContent = current.slice(0, charIdx--);
-      if (charIdx < 0) {
-        deleting = false;
-        i = (i + 1) % texts.length;
-        charIdx = 0;
-        setTimeout(type, 400);
-        return;
-      }
-    }
-    setTimeout(type, deleting ? 60 : 90);
-  }
-  type();
-
-  // Smooth scroll nav
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-</script>
+<script src="assets/scripts/main.js"></script>
 </body>
 </html>
